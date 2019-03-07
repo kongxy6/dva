@@ -23,7 +23,12 @@ function RouterConfig({ history, app }) {
 
   const PlayGround = dynamic({
     app,
-    models: () => [import('../models/playGround'), import('../models/code')],
+    models: () => [
+      import('../models/playGround'),
+      import('../models/startService'),
+      import('../models/powerOff'),
+      import('../models/status')
+    ],
     component: () => import('../routes/PlayGround/PlayGround')
   });
 
@@ -35,6 +40,7 @@ function RouterConfig({ history, app }) {
           {/* <Route exact path="/" render={() => <Redirect to="/" />}> */}
           <Route path="/" exact component={IndexPage} />
           <Route path="/user" exact component={User} />
+          {/* 匹配以之开头的所有路由 */}
           <Route path="/playGround" component={PlayGround} />
           <Route path="*" render={() => <Redirect to="/" />} />
           {/* </Route> */}

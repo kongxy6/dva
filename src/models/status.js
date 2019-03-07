@@ -1,7 +1,7 @@
 export default {
-  namespace: 'code',
+  namespace: 'status',
   state: {
-    modelCode: 'code-model'
+    modelCode: 'status-model'
   },
   reducers: {
     save(state, { payload }) {

@@ -4,38 +4,37 @@ import { connect } from 'dva';
 import { Link, routerRedux } from 'dva/router';
 
 class VerticalHeader extends Component {
-  // constructor(props) {
-  //     super(props)
-  // }
   menuClick = ({ item, key }) => {
-    /*this.props.dispatch(
+    this.props.dispatch(
       routerRedux.push({
         pathname: key,
-        search: null,
+        search: null
       })
-    );*/
+    );
   };
 
   render() {
     const { location } = this.props;
+    const pathname =
+      '/playGround' !== location.pathname
+        ? location.pathname
+        : '/playGround/status';
     return (
       <Menu
-        selectedKeys={[location.pathname]}
+        selectedKeys={[pathname]}
         mode="vertical-left"
         theme="blue"
         onClick={this.menuClick}
         style={{ width: 194 }}
       >
-        <Menu.Item key="/playGround/code" style={{ margin: 0 }}>
-          <Link to="/playGround/code">
-            <Icon type="code" />
-            Code
-          </Link>
+        <Menu.Item key="/playGround/start" style={{ margin: 0 }}>
+          <Icon type="code" />
+          Start
         </Menu.Item>
-        <Menu.Item key="/playGround/creditCard" style={{ margin: 0 }}>
-          <Link to="/playGround/creditCard">
+        <Menu.Item key="/playGround/status" style={{ margin: 0 }}>
+          <Link to="/playGround/status">
             <Icon type="credit-card" />
-            Credit-Card
+            Status
           </Link>
         </Menu.Item>
         <Menu.Item key="/playGround/poweroff" style={{ margin: 0 }}>

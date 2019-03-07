@@ -3,7 +3,19 @@ import { connect } from 'dva';
 import { Route, Switch } from 'dva/router';
 import styles from './PlayGround.less';
 import VerticalHeader from '../../components/MainLayout/Header/VerticalHeader.js';
-import Code from './Code/Code';
+import dynamic from 'dva/dynamic';
+
+const StartService = dynamic({
+  component: () => import('./Start/StartService')
+});
+
+const PowerOff = dynamic({
+  component: () => import('./PowerOff/PowerOff')
+});
+
+const Status = dynamic({
+  component: () => import('./Status/Status')
+});
 
 class PlayGround extends Component {
   render() {
@@ -14,7 +26,10 @@ class PlayGround extends Component {
         <div className={styles.content}>
           <div className={styles.main}>
             <Switch>
-              <Route path={`${match.path}/code`} exact component={Code} />
+              <Route path={`${match.path}`} exact component={Status} />
+              <Route path={`${match.path}/start`} component={StartService} />
+              <Route path={`${match.path}/status`} component={Status} />
+              <Route path={`${match.path}/poweroff`} component={PowerOff} />
             </Switch>
           </div>
         </div>

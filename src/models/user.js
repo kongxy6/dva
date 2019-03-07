@@ -1,4 +1,4 @@
-import {fetch} from '../services/users.js';
+import { fetch } from '../services/users.js';
 
 export default {
   namespace: 'user',

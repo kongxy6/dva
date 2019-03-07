@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './Code.css';
+import styles from './Status.css';
 
-function Code({ modelCode, dispatch }) {
+function Status({ modelCode, dispatch }) {
   return <div className={styles.normal}>{modelCode}</div>;
 }
 
-Code.propTypes = {};
+Status.propTypes = {};
 
 function mapStateToProps(state) {
   return {
-    ...state.code
+    ...state.status
   };
 }
 
-export default connect(mapStateToProps)(Code);
+export default connect(mapStateToProps)(Status);
