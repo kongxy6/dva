@@ -26,7 +26,7 @@ class PlayGround extends Component {
         <div className={styles.content}>
           <div className={styles.main}>
             <Switch>
-              <Route path={`${match.path}`} exact component={Status} />
+              <Route path={`${match.path}/`} exact component={Status} />
               <Route path={`${match.path}/start`} component={StartService} />
               <Route path={`${match.path}/status`} component={Status} />
               <Route path={`${match.path}/poweroff`} component={PowerOff} />

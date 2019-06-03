@@ -36,15 +36,10 @@ function RouterConfig({ history, app }) {
     <ConnectedRouter history={history}>
       {/* <Provider store={store}> */}
       <App>
-        <Switch>
-          {/* <Route exact path="/" render={() => <Redirect to="/" />}> */}
-          <Route path="/" exact component={IndexPage} />
-          <Route path="/user" exact component={User} />
-          {/* 匹配以之开头的所有路由 */}
-          <Route path="/playGround" component={PlayGround} />
-          <Route path="*" render={() => <Redirect to="/" />} />
-          {/* </Route> */}
-        </Switch>
+        <Route path="/" exact component={IndexPage} />
+        <Route path="/user" component={User} />
+        {/* 匹配以之开头的所有路由 */}
+        <Route path="/playGround" component={PlayGround} />
       </App>
       {/* </Provider> */}
     </ConnectedRouter>

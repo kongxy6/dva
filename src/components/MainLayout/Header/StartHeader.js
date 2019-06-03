@@ -3,7 +3,7 @@ import { Menu, Icon } from 'antd';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
 
-class MainHeader extends Component {
+class StartHeader extends Component {
   menuClick = ({ item, key }) => {
     //使用<Link to="/">标签也是可以的
     this.props.dispatch(
@@ -17,9 +17,12 @@ class MainHeader extends Component {
   render() {
     const { location } = this.props;
     const path = location.pathname.substr(1).split('/');
-    let key = '/';
-    if (path.length > 0) {
-      key += path[0];
+    let key = '/playGround/start/';
+    if (path.length > 2) {
+      key += path[2];
+    }
+    if (key === '/playGround/start/') {
+      key += 'one';
     }
     return (
       <Menu
@@ -28,21 +31,17 @@ class MainHeader extends Component {
         theme="blue"
         onClick={this.menuClick}
       >
-        <Menu.Item key="/">
-          <Icon type="home" />
-          Home
-        </Menu.Item>
-        <Menu.Item key="/user">
+        <Menu.Item key="/playGround/start/one">
           <Icon type="user" />
-          User
+          One
         </Menu.Item>
-        <Menu.Item key="/playGround">
+        <Menu.Item key="/playGround/start/two">
           <Icon type="desktop" />
-          PlayGround
+          Two
         </Menu.Item>
       </Menu>
     );
   }
 }
 
-export default connect()(MainHeader);
+export default connect()(StartHeader);

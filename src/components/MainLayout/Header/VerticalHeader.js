@@ -15,13 +15,17 @@ class VerticalHeader extends Component {
 
   render() {
     const { location } = this.props;
-    const pathname =
-      '/playGround' !== location.pathname
-        ? location.pathname
-        : '/playGround/status';
+    const path = location.pathname.substr(1).split('/');
+    let key = '/playGround/';
+    if (path.length > 1) {
+      key += path[1];
+    }
+    if (key === '/playGround/') {
+      key += 'status';
+    }
     return (
       <Menu
-        selectedKeys={[pathname]}
+        selectedKeys={[key]}
         mode="vertical-left"
         theme="blue"
         onClick={this.menuClick}

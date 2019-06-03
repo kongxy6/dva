@@ -1,7 +1,7 @@
 
 .normal {
   font-family: Georgia, sans-serif;
-  margin-top: 3em;
+  margin-top: 1em;
   text-align: center;
 }
 
@@ -9,4 +9,8 @@
   font-size: 2.5rem;
   font-weight: normal;
   letter-spacing: -1px;
+}
+
+.chart {
+  width: 800px;
 }
