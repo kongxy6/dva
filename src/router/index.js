@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect, routerRedux } from 'dva/router';
+import { Route, routerRedux } from 'dva/router';
 import dynamic from 'dva/dynamic';
 import App from '../routes/App';
 

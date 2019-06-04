@@ -40,6 +40,10 @@ class UsersTable extends Component {
   };
 
   componentDidMount() {
+    // 获取url的参数
+    const { location } = this.props;
+    console.log(location);
+
     //首次加载手动设置参数
     this.props.dispatch({
       type: 'user/fetch',
@@ -77,9 +81,10 @@ class UsersTable extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   // 得到modal中的state将其赋值给该组件的属性
   return {
+    ...ownProps,
     ...state.user
   };
 }

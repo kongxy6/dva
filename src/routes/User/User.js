@@ -9,7 +9,7 @@ class User extends Component {
   render() {
     return (
       <div className={styles.normal}>
-        <UsersComponent />
+        <UsersComponent location={this.props.location} />
       </div>
     );
   }
@@ -17,4 +17,12 @@ class User extends Component {
 
 User.propTypes = {};
 
-export default connect()(User);
+function mapStateToProps(state, ownProps) {
+  // 得到modal中的state将其赋值给该组件的属性
+  return {
+    ...ownProps,
+    ...state.user
+  };
+}
+
+export default connect(mapStateToProps)(User);
