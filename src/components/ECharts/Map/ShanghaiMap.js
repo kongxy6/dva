@@ -131,7 +131,7 @@ class ShanghaiMap extends Component {
         ]
       },
       geo: {
-        map: 'shanghai',
+        map: '上海',
         label: {
           emphasis: {
             show: false
