@@ -30,7 +30,7 @@
     "echarts-for-react": "^2.0.8",
     "immutability-helper": "^2.9.0",
     "intl": "^1.2.5",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "query-string": "^6.2.0",
     "react": "^16.2.0",
     "react-codemirror2": "^5.1.0",
